@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/beatrizmribeiro/liri-node-app/issues"
   },
-  "homepage": "https://github.com/beatrizmribeiro/liri-node-app#readme"
+  "homepage": "https://github.com/beatrizmribeiro/liri-node-app#readme",
+  "dependencies": {
+    "geocoder": "^0.2.3",
+    "imdb": "^1.1.0",
+    "node-spotify-api": "^1.0.7",
+    "twitter": "^1.7.1"
+  }
 }
