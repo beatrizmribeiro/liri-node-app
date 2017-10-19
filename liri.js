@@ -48,62 +48,24 @@ function tweets() {
 switch (selection){
 
 
+	case "do-what-it-says":
+	fs.readFile("random.txt", "utf8", function(err, data) {
+  if (err) {
+    return console.log(err);
+
+}
+ console.log(data);
+
+
+
+  });
+
+
+break;
+
+
 case "my-tweets":
 	tweets();
-    //get keys from key.js
-    // var key = require("./keys.js");
-    // var keys = key.twitterKeys;
-
-    // //crate client object with authentication keys
-    // var client = new Twitter({
-    //   consumer_key: keys.consumer_key,
-    //   consumer_secret: keys.consumer_secret,
-    //   access_token_key: keys.access_token_key,
-    //   access_token_secret: keys.access_token_secret
-    // });
-    // //just created twitter account - many profile info missing, maybe that's why my username does not return any text. 
-    // //so used an established user to test search by query
-    // client.post('search/tweets', {q:'@beatrizzzz_m', count:10}, function(error, tweets, response) {
-    //   if(error) {
-    //       return console.log(error);
-    //     }
-    //       //loop to get list of tweets
-    //       for (var i = 0; i < tweets.statuses.length ; i++ ){
-    //       console.log(tweets.statuses[i].text);
-    //       }
-    //     console.log("----------------------------------------------------------------------");
-    // });
-
-// var params = {screen_name: 'beatrizzzz_m'};
-//   	client.get('statuses/user_timeline', params, function(error, tweets, response) {
-//   	  if (!error) {
-//   	    for (var i = 0; i < tweets.length; i++) {
-//   	    	console.log(tweets[i].text);
-//   	    	console.log(tweets[i].created_at);
-//   	    };
-//   	  };
-//   	});
-
-// var screenName = {screen_name: 'beatrizzzz_m'};
-//   client.get('statuses/user_timeline', screenName, function(error, tweets, response){
-//     if(error)
-//       console.log(error);
-
-//     if(!error){
-//       for(var i = 3; i<tweets.length; i++){
-//         var date = tweets[i].created_at;
-//         console.log("@beatrizzzz_m: " + tweets[i].text + " Created At: " + date.substring(0, 19));
-//         console.log("-----------------------");
-        
-//         //adds text to log.txt file
-//         //fs.appendFile('log.txt', "@beatrizzzz_m: " + tweets[i].text + " Created At: " + date.substring(0, 19));
-//         //fs.appendFile('log.txt', "-----------------------");
-//       }
-//     }else{
-//       console.log('Error occurred');
-//     }
-//   });
-
 
 
 
@@ -188,37 +150,10 @@ request(queryUrl, function(error, response, body) {
 });
 
 
-//grabing movies information from omdb
-
-
-	//var queryURL = "http://www.omdbapi.com/?t=" + search + "&y=&plot=short&apikey=40e9cece";
-  		
-  		//console.log(queryURL);
-
-
-	//request(queryURL, function(error, response, body) {
-
-
-  //if (error){
-
-    //eturn console.log('Error:', error)
- // }
-//
-  //body = JSON.parse(body)
-    
-//   console.log("Title: " + body.Title);
-//   console.log("Year: " + body.Year);
-//   console.log("IMDB Rating: " + body.imdbRating);
-//   console.log("Rotten Tomatoes Rating: " + body.Ratings[1].Value)
-//   console.log("Country: " + body.Country)
-//   console.log("Language: " + body.Language);
-//   console.log("Plot :" + body.Plot);
-//   console.log("Actor: " + body.Actors)
-// });
 
 
 
-function menu(selection, query) {
+//function menu(selection, query) {
  // 	//fs.appendFile('log.txt',"\n"+selection+" "+query+"\n")
 	// switch (selection) {
 
@@ -237,6 +172,6 @@ function menu(selection, query) {
 	// 	// case "do-what-it-says":
 	// 	// 	doThis();
 	// 		//break;
-	}
+	//}
 }
 
