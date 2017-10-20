@@ -23,7 +23,7 @@ var selection = process.argv[2];
 
 var query = process.argv.slice(3).join('+');
 
-// function tweets() {
+// function request my last 20 tweets {
 function tweets() {
   var Twitter = require('twitter');
   var client = new Twitter(keys.twitterKeys);
@@ -47,7 +47,7 @@ function tweets() {
 
 switch (selection){
 
-
+//request to read a file random.txt
 	case "do-what-it-says":
 	fs.readFile("random.txt", "utf8", function(err, data) {
   if (err) {
@@ -70,7 +70,8 @@ case "my-tweets":
 
 
 break;
-
+// Loop through all the words in the node argument
+//request song from spotify
 case "spotify-this-song":
 
 var songName = "";
@@ -152,26 +153,13 @@ request(queryUrl, function(error, response, body) {
 
 
 
-
-//function menu(selection, query) {
- // 	//fs.appendFile('log.txt',"\n"+selection+" "+query+"\n")
-	// switch (selection) {
-
-	// 	// case "my-tweets":
-	// 	// 	myTweets();
-	// 	// 	break;
-
-	// 	case "spotify-this-song":
-	// 		songName(query);
-	// 		break;
-
-	// 	case "movie-this":
-	// 		movieName(query);
-	// 		break;
-
-	// 	// case "do-what-it-says":
-	// 	// 	doThis();
-	// 		//break;
-	//}
 }
 
+
+//Function that logs console searches to log.txt file
+fs.appendFile("log.txt", process.argv, function(error){
+  if (error) {
+    console.log(error);
+  }
+  console.log("Request Logged!");
+});
