@@ -1,3 +1,5 @@
+// Nice job defining your global vars at the top of the file 👌
+
 //code to grab the data from keys.js
 var fs = require('fs');
 
@@ -20,7 +22,11 @@ var spotify = new spotify(spotifyKeys);
 var nodeArgs = process.argv;
 
 var selection = process.argv[2];
-
+// You didn't end up using this variable anywhere else in you file,
+// but I like how you used the slice/join method combo - I think if
+// you had just joined using a space instead of a plus, then you could
+// have used this variable in all the places where you use a for loop
+// to iterate over the nodeArgs array above to build up songName and movieName.
 var query = process.argv.slice(3).join('+');
 
 // function request my last 20 tweets {
@@ -54,6 +60,10 @@ switch (selection){
     return console.log(err);
 
 }
+  // so now that you have the data from the random.txt file
+  // you also want to figure out which action to run:
+  // my-tweets, spotify-this-song, or movie-this
+  // and then you want to run it 🤓
  console.log(data);
 
 
@@ -65,6 +75,8 @@ break;
 
 
 case "my-tweets":
+  // I really like how you broke out your tweets logic into a function
+  // I'd suggest doing this for all the other pieces of logic as well
 	tweets();
 
 
